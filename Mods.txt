@@ -1,0 +1,85 @@
+NumMods=3
+
+144.102063,*,fix,N-term,iTRAQ4plex		# iTRAQ 4 plex
+144.102063,K,fix,any,iTRAQ4plex			# iTRAQ 4 plex
+
+C2H3N1O1,C,fix,any,Carbamidomethylation   # Fixed Carbamidomethyl C (alkylation)
+O1,M,opt,any,Oxidation            # Oxidized methionine
+
+
+
+
+
+
+
+
+##Parent mass tolerance 
+##  Examples: 2.5Da or 30ppm
+##  Use comma to set asymmetric values, for example "0.5Da,2.5Da" will set 0.5Da to the left (expMass<theoMass) and 2.5Da to the right (expMass>theoMass)
+#PMTolerance=20ppm
+#
+##Max Number of Modifications per peptide 
+## If this value is large, the search will be slow
+#NumMods=3
+#
+##Modifications (see below for examples)
+##144.102063,*,fix,N-term,iTRAQ
+##144.102063,K,fix,any,iTRAQ
+#C2H3N1O1,C,fix,any,Carbamidomethylation   # Fixed Carbamidomethyl C (alkylation)
+#
+#O1,M,opt,any,Oxidation            # Oxidized methionine
+#
+#
+##FragmentationMethodID=0
+##InstrumentID=1
+##EnzymeID=1
+#
+##Number of allowed C13 peaks
+##  Takes into account that 2nd or 3rd isotope may have been chosen for fragmentation
+##  If 1, then considers expPeptideMass-1.00335
+##  If 2, then also considers expPeptideMass-2.00671
+##  Useful for accurate precursor ion masses
+##  Ignored if the parent mass tolerance is > 0.5Da or 500ppm
+##C13=2
+#
+##Number of allowed non-enzymatic termini
+##  The number of allowed peptide termini that are not cleaved by the enzyme (default 1)
+##  For trypsin, 0 means fully tryptic only, 1 means partially tryptic, and 2 means no-enzyme search
+##NNET=1
+#
+##Minimum peptide length to consider
+##minLength=6
+#
+##Maximum peptide length to consider
+##maxLength=50
+#
+##Number of matches per spectrum to be reported
+## NumMatchesPerSpec=3
+#
+##Amino Acid Frequencies
+##  If 0, compute amino acid frequencies from the input database and use them as amino acid probabilities
+##  If 1, use uniform amino acid probability (preferable when the database size is small)
+##  If auto, then Analysis Manager will auto-set this to 0 if the the .Fasta file is more than 20 KB in size
+##uniformAAProb=auto
+#
+#
+##Amino Acid Modification Examples
+## Specific static modifications using one or more StaticMod= entries
+## Specific dynamic modifications using one or more DynamicMod= entries
+## Modification format is:
+## Mass or CompositionStr, Residues, ModType, Position, Name (all the five fields are required).
+## Examples:
+##   C2H3N1O1,  C,  fix, any,      Carbamidomethylation # Fixed Carbamidomethyl C (alkylation)
+##   O1,        M,  opt, any,      Oxidation            # Oxidation M
+##   15.994915, M,  opt, any,      Oxidation            # Oxidation M (mass is used instead of CompositionStr)
+##   H-1N-1O1,  NQ, opt, any,      Deamidation          # Negative numbers are allowed.
+##   CH2,       K,  opt, any,      Methylation          # Methylation K
+##   C2H2O1,    K,  opt, any,      Acetylation          # Acetylation K
+##   HO3P,      STY,opt, any,      Phosphorylation      # Phosphorylation STY
+##   C2H3NO,    *,  opt, N-term,   Carbamidomethylation # Variable Carbamidomethyl N-term
+##   H-2O-1,    E,  opt, N-term,   Pyro-glu             # Pyro-glu from E
+##   H-3N-1,    Q,  opt, N-term,   Pyro-glu             # Pyro-glu from Q
+##   C2H2O,     *,  opt, Prot-N-term,Acetylation        # Acetylation Protein N-term
+
+
+
